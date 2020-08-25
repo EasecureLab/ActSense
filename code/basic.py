@@ -12,16 +12,16 @@ MONTH_NAME = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oc
 
 def get_tensor(year=2015, data_type='missing'):
     if data_type == 'missing':
-        raw_data = np.load("../data/data-2013-2017-missing.npy").item()
+        raw_data = np.load("../data/data-2013-2017-missing.npy",allow_pickle=True).item()
         ORDER = APPLIANCE_ORDER_MISSING
     if data_type == 'filter':
-        raw_data = np.load("../data/data-2013-2017-missing-filtered.npy").item()
+        raw_data = np.load("../data/data-2013-2017-missing-filtered.npy",allow_pickle=True).item()
         ORDER = APPLIANCE_ORDER_MISSING
     if data_type == 'observed':
-        raw_data = np.load("../data/data-2013-2017-observed-filtered.npy").item()
+        raw_data = np.load("../data/data-2013-2017-observed-filtered.npy",allow_pickle=True).item()
         ORDER = APPLIANCE_ORDER_OBSERVED
     if data_type == 'artificial':
-        raw_data = np.load("../data/data-2013-2017-observed-filtered-artificial.npy").item()
+        raw_data = np.load("../data/data-2013-2017-observed-filtered-artificial.npy",allow_pickle=True).item()
         ORDER = APPLIANCE_ORDER_OBSERVED
 
     data_year = raw_data[year]
@@ -39,16 +39,16 @@ def get_tensor(year=2015, data_type='missing'):
 
 def get_sub_tensor(year, home_ids, data_type):
     if data_type == 'missing':
-        raw_data = np.load("../data/data-2013-2017-missing.npy").item()
+        raw_data = np.load("../data/data-2013-2017-missing.npy", allow_pickle=True).item()
         ORDER = APPLIANCE_ORDER_MISSING
     if data_type == 'filter':
-        raw_data = np.load("../data/data-2013-2017-missing-filtered.npy").item()
+        raw_data = np.load("../data/data-2013-2017-missing-filtered.npy", allow_pickle=True).item()
         ORDER = APPLIANCE_ORDER_MISSING
     if data_type == 'observed':
-        raw_data = np.load("../data/data-2013-2017-observed-filtered.npy").item()
+        raw_data = np.load("../data/data-2013-2017-observed-filtered.npy", allow_pickle=True).item()
         ORDER = APPLIANCE_ORDER_OBSERVED
     if data_type == 'artificial':
-        raw_data = np.load("../data/data-2013-2017-observed-filtered-artificial.npy").item()
+        raw_data = np.load("../data/data-2013-2017-observed-filtered-artificial.npy", allow_pickle=True).item()
         ORDER = APPLIANCE_ORDER_OBSERVED
 
     data_year = raw_data[year]
